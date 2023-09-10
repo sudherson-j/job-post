@@ -37,8 +37,10 @@ export class JobPostListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.jobPosts.unshift(result);
-      this.selectedJobPost = result;
+      if (result) {
+        this.jobPosts.unshift(result);
+        this.selectedJobPost = result;
+      }
     });
   }
 }
