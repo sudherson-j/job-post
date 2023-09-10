@@ -1,0 +1,95 @@
+<h2 mat-dialog-title>Add Job</h2>
+<mat-dialog-content>
+    <form [formGroup]="form" (ngSubmit)="onSaveClick()">
+        <div class="row">
+            <mat-form-field class="flex-fill">
+                <mat-label>Title</mat-label>
+                <mat-icon matPrefix>person</mat-icon>
+                <input matInput formControlName="title" placeholder="Enter your job title">
+                <mat-error *ngIf="submitted && form.get('title')?.errors?.['required']">Title is required.</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field class="flex-fill">
+                <mat-label>Job ID</mat-label>
+                <mat-icon matPrefix>person</mat-icon>
+                <input matInput type="text" formControlName="jobId" placeholder="Enter your job id">
+                <mat-error *ngIf="submitted && form.get('jobId')?.errors?.['required']">Job ID is required.</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field class="flex-fill">
+                <mat-label>Company</mat-label>
+                <mat-icon matPrefix>person</mat-icon>
+                <input matInput type="text" formControlName="company" placeholder="Enter your company">
+                <mat-error *ngIf="submitted && form.get('company')?.errors?.['required']">Company is
+                    required.</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field class="flex-fill">
+                <mat-label>Category</mat-label>
+                <mat-icon matPrefix>person</mat-icon>
+                <input matInput type="text" formControlName="category" placeholder="Enter your category">
+                <mat-error *ngIf="submitted && form.get('category')?.errors?.['required']">Category is
+                    required.</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="row" [formGroup]="locationForm">
+            <div class="col-md-3">
+                <mat-form-field>
+                    <mat-label>City</mat-label>
+                    <mat-icon matPrefix>person</mat-icon>
+                    <input matInput type="text" formControlName="city" placeholder="Enter your city">
+                    <mat-error *ngIf="submitted && locationForm.get('city')?.errors?.['required']">City is
+                        required.</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field>
+                    <mat-label>State</mat-label>
+                    <mat-icon matPrefix>person</mat-icon>
+                    <input matInput type="text" formControlName="state" placeholder="Enter your state">
+                    <mat-error *ngIf="submitted && locationForm.get('state')?.errors?.['required']">State is
+                        required.</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field>
+                    <mat-label>Country</mat-label>
+                    <mat-icon matPrefix>person</mat-icon>
+                    <input matInput type="text" formControlName="country" placeholder="Enter your country">
+                    <mat-error *ngIf="submitted && locationForm.get('country')?.errors?.['required']">Country is
+                        required.</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <mat-form-field>
+                    <mat-label>Zip</mat-label>
+                    <mat-icon matPrefix>person</mat-icon>
+                    <input matInput type="text" formControlName="zip" placeholder="Enter your zip">
+                    <mat-error *ngIf="submitted && locationForm.get('zip')?.errors?.['required']">Zip is
+                        required.</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <mat-form-field class="flex-fill">
+                <mat-label>Job description</mat-label>
+                <mat-icon matPrefix>person</mat-icon>
+                <textarea matInput formControlName="body" rows="4" placeholder="Enter HTML content"></textarea>
+                <mat-error *ngIf="submitted && form.get('body')?.errors?.['required']">Job description is
+                    required.</mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="onSaveClick()">Save</button>
+</mat-dialog-actions>

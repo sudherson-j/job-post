@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+/* styles.css */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-typography {
+  margin: 20px;
+}
+
+.head-container {
+  display: flex;
+}
+
+/* Basic layout styles */
+.container {
+  display: flex;
+  margin: 0;
+}
+
+.left-panel {
+  flex: 1; /* Change to 1 to make it take up 1/3 of the container */
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  background-color: #f7f7f7;
+  overflow-y: auto; /* Enable scrolling if content exceeds the panel height */
+  max-height: 100vh;
+}
+
+.right-panel {
+  flex: 2; /* Change to 2 to make it take up 2/3 of the container */
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+}
+
+.custom-mat-card {
+  /* Your custom styles go here */
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff !important;
+  padding: 16px;
+  margin: 16px;
+  transition: transform 0.2s;
+}
+
+/* Hover effect for mat-card */
+.custom-mat-card:hover {
+  transform: translateY(-5px);
+}
+
+.custom-mat-card-title {
+  font-size: medium;
+}

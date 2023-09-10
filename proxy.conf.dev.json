@@ -1,0 +1,8 @@
+{
+  "/": {
+    "target": "https://www.getgreatcareers.com/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
